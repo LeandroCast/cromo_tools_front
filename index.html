@@ -109,20 +109,30 @@
       // e processar os dados de acordo com suas necessidades
 
       // Exemplo de chamada de API usando o fetch
-      fetch('https://api.example.com/endpoint', {
+      fetch('calculadora.cromobr.net/calculadora/parcelas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           // Dados a serem enviados para a API
-          valorTabela: document.getElementById('valor_tabela').value,
-          // ... adicione mais campos conforme necessário
+          data_inicio_balao: document.getElementById('data_vencimento_baloes').value,
+          data_inicio_entrada: document.getElementById('data_vencimento_entrada').value,
+          data_inicio_parcela: document.getElementById('data_vencimento_mensais').value,
+          // id_empreendimento: document.getElementById('valor_tabela').value,
+          qtd_entrada: document.getElementById('n_entradas').value,
+          qtd_parcelas: document.getElementById('n_mensais').value,
+          tem_balao: document.getElementById('baloes').value,
+          valor_balao: document.getElementById('valor_baloes').value,
+          valor_entrada: document.getElementById('n_entradas').value,
+          valor_lote: document.getElementById('valor_tabela').value
+
         })
       })
         .then(response => response.json())
         .then(data => {
           // Processar os dados retornados pela API
+          
           console.log(data);
         })
         .catch(error => {

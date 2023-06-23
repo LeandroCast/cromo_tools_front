@@ -120,7 +120,7 @@
       console.log( document.getElementById('valor_tabela').value)
 
       // Exemplo de chamada de API usando o fetch
-      fetch('calculadora.cromobr.net/calculadora/parcelas', {
+      fetch('calculadora.cromobr.net//calculadora/parcelas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -148,6 +148,7 @@
         })
         .catch(error => {
           // Tratar erros da chamada de API
+          console.log(error)
           console.error(error);
         });
     }

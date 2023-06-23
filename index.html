@@ -107,6 +107,17 @@
     function calcularParcela() {
       // Aqui você pode adicionar a lógica para realizar a chamada de API
       // e processar os dados de acordo com suas necessidades
+      
+      console.log(document.getElementById('data_vencimento_baloes').value)
+      console.log( document.getElementById('data_vencimento_entrada').value)
+      console.log( document.getElementById('data_vencimento_mensais').value)
+      // console.log( document.getElementById('valor_tabela').value)
+      console.log( document.getElementById('n_entradas').value)
+      console.log( document.getElementById('n_mensais').value)
+      console.log( document.getElementById('baloes').value)
+      console.log( document.getElementById('valor_baloes').value)
+      console.log( document.getElementById('n_entradas').value)
+      console.log( document.getElementById('valor_tabela').value)
 
       // Exemplo de chamada de API usando o fetch
       fetch('calculadora.cromobr.net/calculadora/parcelas', {

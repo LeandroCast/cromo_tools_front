@@ -42,20 +42,20 @@
 
     <h2>Fluxo de pagamento</h2>
 
-    <div class="flex-container">
+    
       <div>
         <h3>Entrada</h3>
         <label for="n_entradas">Nº de parcelas:</label>
         <input type="number" id="n_entradas" name="n_entradas" required>
 
-        <label for="data_vencimento_entrada">Vencimento:</label>
+        <label for="data_vencimento_entrada">Vencimento da primeira parcela da entrada:</label>
         <input type="date" id="data_vencimento_entrada" name="data_vencimento_entrada" required>
 
-        <label for="valor_entrada">Valor da Parcela:</label>
+        <label for="valor_entrada">Valor da Entrada:</label>
         <input type="text" id="valor_entrada" name="valor_entrada" pattern="[0-9]+([,.][0-9]{2})?" required>
         <small>Formato: 0,00</small>
       </div>
-
+      <br></br>
       <div>
         <h3>Mensais</h3>
         <label for="n_mensais">Nº de parcelas:</label>
@@ -68,7 +68,7 @@
         <input type="text" id="valor_mensais" name="valor_mensais" pattern="[0-9]+([,.][0-9]{2})?" readonly>
         <small>Formato: 0,00</small>
       </div>
-
+      <br></br>
       <div>
         <h3>Balões</h3>
         <label for="baloes">Incluir balões no financiamento:</label>
@@ -83,7 +83,6 @@
           <small>Formato: 0,00</small>
         </div>
       </div>
-    </div>
 
     <div class="button-container">
       <button type="button" id="calcularParcela">Calcular Parcela</button>
@@ -119,8 +118,26 @@
       console.log( document.getElementById('n_entradas').value)
       console.log( document.getElementById('valor_tabela').value)
 
+      let body_spy = {
+          // Dados a serem enviados para a API
+          data_inicio_balao: document.getElementById('data_vencimento_baloes').value,
+          data_inicio_entrada: document.getElementById('data_vencimento_entrada').value,
+          data_inicio_parcela: document.getElementById('data_vencimento_mensais').value,
+          // // id_empreendimento: document.getElementById('valor_tabela').value,
+          qtd_entrada: document.getElementById('n_entradas').value,
+          qtd_parcelas: document.getElementById('n_mensais').value,
+          tem_balao: baloesCheckbox.checked,
+          valor_balao: document.getElementById('valor_baloes').value,
+          valor_entrada: document.getElementById('n_entradas').value,
+          valor_lote: document.getElementById('valor_tabela').value
+
+        }
+
+      console.log('BODY DA REQUISIÇÃO========================================================')
+      console.log(body_spy)
+
       // Exemplo de chamada de API usando o fetch
-      fetch('https://calculadora.cromobr.net//calculadora/parcelas', {
+      fetch('https://calculadora.cromobr.net/calculadora/parcelas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -130,7 +147,7 @@
           data_inicio_balao: document.getElementById('data_vencimento_baloes').value,
           data_inicio_entrada: document.getElementById('data_vencimento_entrada').value,
           data_inicio_parcela: document.getElementById('data_vencimento_mensais').value,
-          // id_empreendimento: document.getElementById('valor_tabela').value,
+          // // id_empreendimento: document.getElementById('valor_tabela').value,
           qtd_entrada: document.getElementById('n_entradas').value,
           qtd_parcelas: document.getElementById('n_mensais').value,
           tem_balao: baloesCheckbox.checked,
@@ -140,16 +157,18 @@
 
         })
       })
-        .then(response => response.json())
+        .then(response => {
+          return response.json()
+        })
         .then(data => {
           // Processar os dados retornados pela API
-          
-          console.log(data);
+          console.log(data.valor_parcela)
+          document.getElementById('valor_mensais').value = data.valor_parcela
         })
         .catch(error => {
           // Tratar erros da chamada de API
           console.log('DEU PAU!')
-          console.log(error);
+          console.log(error)
           console.log('CONSEGUI PRINTAR!')
           // console.error(error);
         });
@@ -161,3 +180,4 @@
   </script>
 </body>
 </html>
+

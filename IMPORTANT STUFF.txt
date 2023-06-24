@@ -1,0 +1,6 @@
+important stuff
+
+key pair da instancia EC2 - Back-end-cromo-Ubuntu
+8d35624fca430dbfb8216cdc550797bedffb2679
+
+ssh -i .\back-end-cromo-ubuntu.pem ubuntu@ec2-54-226-173-250.compute-1.amazonaws.com

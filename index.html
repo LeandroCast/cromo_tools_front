@@ -10,23 +10,24 @@
     .flex-container {
       display: flex;
       align-items: center;
+      justify-content: center; 
     }
 
     .flex-container img {
-      margin-right: 10px;
-      margin-left: 50px;
+      margin-right: 20px;
+      margin-left: 60px;
+      
     }
   </style>
   
-  <div class="flex-container">
+  <div class="flex-container" >
     <div><img src="https://static.wixstatic.com/media/33afb6_755b37ba40bd49aa8a8e21c8c4cc43ec~mv2.png/v1/crop/x_259,y_271,w_746,h_437/fill/w_94,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20Cr.png" alt="Logo"></div>
     <div><h1>Cromo Tech</h1></div>
   </div>
   
-  
-  
 </head>
 <body>
+
   <div class="container">
     <h2>Calculadora de Parcelas</h2>
 
@@ -40,6 +41,7 @@
     <label for="valor_desconto">Valor com desconto à vista (5%):</label>
     <input type="text" id="valor_desconto" name="valor_desconto" pattern="[0-9]+([,.][0-9]{2})?" readonly>
 
+    <br></br>
     <h2>Fluxo de pagamento</h2>
 
     
@@ -48,7 +50,7 @@
         <label for="n_entradas">Nº de parcelas:</label>
         <input type="number" id="n_entradas" name="n_entradas" required>
 
-        <label for="data_vencimento_entrada">Vencimento da primeira parcela da entrada:</label>
+        <label for="data_vencimento_entrada">Data de vencimento do sinal:</label>
         <input type="date" id="data_vencimento_entrada" name="data_vencimento_entrada" required>
 
         <label for="valor_entrada">Valor da Entrada:</label>
@@ -65,7 +67,7 @@
         <input type="date" id="data_vencimento_mensais" name="data_vencimento_mensais" required>
 
         <label for="valor_mensais">Valor da Parcela:</label>
-        <input type="text" id="valor_mensais" name="valor_mensais" pattern="[0-9]+([,.][0-9]{2})?" readonly>
+        <input type="text" id="valor_mensais" name="valor_mensais" pattern="[0-9]+([,.][0-9]{2})?" readonly style="color:green;font-weight: bold">
         <small>Formato: 0,00</small>
       </div>
       <br></br>

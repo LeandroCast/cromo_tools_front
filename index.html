@@ -68,8 +68,10 @@
       <br></br>
       <div>
         <h3>Balões</h3>
-        <label for="baloes">Incluir balões no financiamento:</label>
-        <input type="checkbox" id="baloes" name="baloes">
+        <div style="display: flex">
+          <label for="baloes">Incluir balões no financiamento:</label>
+          <input type="checkbox" id="baloes" name="baloes" class="larger">
+        </div>
         <br></br>
         <div id="campo-balao" style="display: none;">
           <label for="data_vencimento_baloes">Vencimento:</label>
@@ -85,7 +87,7 @@
       <h5>Preencha os dados acima e pressione o botão abaixo:</h5>
       <!-- <br></br> -->
       <!-- <input value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" type="text" id="parecer" name="parecer" pattern="[0-9]+([,.][0-9]{2})?" required readonly style=" height: 200px;  overflow: scroll;" > -->
-      <textarea value = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' id="parecer" name="parecer" rows="3" cols="100"></textarea>
+      <textarea id="parecer" name="parecer" rows="3" cols="100"></textarea>
       <br></br>
       <div class="button-container">
         <button type="button" id="calcularParcela">Calcular Parcela</button>

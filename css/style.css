@@ -53,6 +53,11 @@
     font-family: Arial, sans-serif; 
     font-size: 5ex;
   }
+
+  h5 {
+    font-family: Arial, sans-serif; 
+    font-size: 3ex;
+  }
   
   label {
     display: block;

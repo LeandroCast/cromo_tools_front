@@ -28,6 +28,7 @@
     margin-bottom: 20px;
     font-family: Arial, sans-serif; 
     font-weight: bold;
+    font-size: 6ex;
   }
 
   h2 {
@@ -35,18 +36,33 @@
     margin-bottom: 30px;
     font-family: Arial, sans-serif; 
     font-weight: bold;
+    font-size: 6ex;
   }
 
   h3 {
     color: #DBA502;
     margin-bottom: 5px;
     font-family: Arial, sans-serif; 
+    font-size: 5ex;
   }
   
   label {
     display: block;
     margin-bottom: 10px;
     color: #666;
+    font-size: 4ex;
+  }
+
+  label_central {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 4ex;
+    text-align: center;
+  }
+
+  small{
+    font-size: 3ex;
   }
   
   
@@ -54,7 +70,7 @@
   input[type="number"],
   input[type="date"],
   input[type="text"] {
-    width: 100%;
+    width: 97%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -89,6 +105,10 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    font-size: 6ex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto
   }
   
   button:hover {

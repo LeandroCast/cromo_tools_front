@@ -35,12 +35,6 @@
     <input type="text" id="valor_tabela" name="valor_tabela" pattern="[0-9]+([,.][0-9]{2})?" required>
     <small>Formato: 0,00</small>
 
-    <label for="data_emissao">Data de Emissão do Contrato:</label>
-    <input type="date" id="data_emissao" name="data_emissao" required>
-
-    <label for="valor_desconto">Valor com desconto à vista (5%):</label>
-    <input type="text" id="valor_desconto" name="valor_desconto" pattern="[0-9]+([,.][0-9]{2})?" readonly>
-
     <br></br>
     <h2>Fluxo de pagamento</h2>
 
@@ -86,8 +80,12 @@
         </div>
       </div>
 
-    <div class="button-container">
-      <button type="button" id="calcularParcela">Calcular Parcela</button>
+    <div class="container">
+      <h5>Preencha os dados acima e pressione o botão abaixo:</h5>
+      <label_central for="parecer"> </label_central>
+      <div class="button-container">
+        <button type="button" id="calcularParcela">Calcular Parcela</button>
+      </div>
     </div>
   </div>
 
@@ -166,6 +164,8 @@
           // Processar os dados retornados pela API
           console.log(data.valor_parcela)
           document.getElementById('valor_mensais').value = data.valor_parcela
+          document.getElementById('parecer').value = data.message
+          
         })
         .catch(error => {
           // Tratar erros da chamada de API
